@@ -1,57 +1,42 @@
 import 'package:flutter/material.dart';
 
-InputDecoration textFieldDecoration(
-    String label, BuildContext context) => InputDecoration(
-  filled: true,
-  fillColor: Theme.of(context).backgroundColor.withAlpha(100),
-  labelText: label,
-);
+InputDecoration textFieldDecoration(String label, BuildContext context) =>
+    InputDecoration(
+      filled: true,
+      fillColor: Theme.of(context).secondaryHeaderColor,
+      labelText: label,
+    );
 
 AppBar myAppBar(String myTitle) => AppBar(
-  backgroundColor: Colors.cyan,
-  shadowColor: Colors.deepOrangeAccent,
-  title: Text(myTitle),
-);
+      title: Text(myTitle),
+      backgroundColor: Colors.blue,
+    );
 
-Widget navDrawer(context) => Drawer(
-  child: ListView(
-    children: [
-      DrawerHeader(
-        decoration: const BoxDecoration(
-          color: Colors.cyan,
-        ),
-        child: SizedBox(
-          height: 200,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                height: 100,
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(50.0))
-                ),
-                child: Image.network(
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Google-flutter-logo.svg/330px-Google-flutter-logo.svg.png'),
+Drawer navDrawer(context) => Drawer(
+      child: ListView(
+        children: [
+          const DrawerHeader(
+            child: SizedBox(
+              child: Image(
+                image: AssetImage('assets/image.png'),
+                height: 200,
               ),
-            ],
+            ),
           ),
-        ),
+          ListTile(
+            leading: const Icon(Icons.home),
+            title: const Text('Главная'),
+            onTap: () {
+              Navigator.pushNamed(context, '/');
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.person),
+            title: const Text('Список пользователей'),
+            onTap: () {
+              Navigator.pushNamed(context, '/users');
+            },
+          ),
+        ],
       ),
-      ListTile(
-        leading: const Icon(Icons.person),
-        title: const Text('Профиль'),
-        onTap: () {
-          Navigator.pushNamed(context, '/');
-        },
-      ),
-      ListTile(
-        leading: const Icon(Icons.book),
-        title: const Text('Список пользователей'),
-        onTap: () {
-          Navigator.pushNamed(context, '/users');
-        },
-      ),
-    ],
-  ),
-);
+    );

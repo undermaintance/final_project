@@ -5,8 +5,8 @@ import 'package:final_project/models/strings.dart';
 import 'package:final_project/models/user_class.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class TaskMainScreen extends StatelessWidget {
-  const TaskMainScreen({Key? key}) : super(key: key);
+class TasksScreen extends StatelessWidget {
+  const TasksScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class _TaskScreenState extends State<TaskScreen> {
   Widget build(BuildContext context) {
     if (_checkAuthorization()) {
       return Scaffold(
-        appBar: myAppBar(Strings.tasksTitle),
+        appBar: myAppBar(Strings.taskScreenTitle),
         body: Container(
           padding: const EdgeInsets.all(20),
           child: Center(
@@ -135,7 +135,7 @@ class _TaskScreenState extends State<TaskScreen> {
               children: [
                 const SizedBox(height: 100),
                 Text(
-                  Strings.authFailed,
+                  Strings.authFail,
                   style: Theme.of(context).textTheme.headline6,
                   textAlign: TextAlign.center,
                 ),

@@ -90,7 +90,7 @@ class User {
                     ),
                     SizedBox(
                         height: 15,
-                        child: Container(alignment: Alignment.topRight, child: Text("Email:", style: Theme.of(context).textTheme.bodyText2, ))
+                        child: Container(alignment: Alignment.topRight, child: Text("E-mail:", style: Theme.of(context).textTheme.bodyText2, ))
                     ),
                     SizedBox(
                         height: 15,
@@ -98,7 +98,7 @@ class User {
                     ),
                     SizedBox(
                         height: 15,
-                        child: Container(alignment: Alignment.topRight, child: Text("www:", style: Theme.of(context).textTheme.bodyText2, ))
+                        child: Container(alignment: Alignment.topRight, child: Text("Сайт:", style: Theme.of(context).textTheme.bodyText2, ))
                     ),
                     SizedBox(
                         height: 65,

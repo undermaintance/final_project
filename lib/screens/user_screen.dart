@@ -46,7 +46,7 @@ class _UserScreenState extends State<UserScreen> {
   Widget build(BuildContext context) {
     if (_checkAuthorization()) {
       return Scaffold(
-        appBar: myAppBar(Strings.appTitle),
+        appBar: myAppBar(Strings.userScreenTitle),
         drawer: navDrawer(context),
         body: Container(
           padding: const EdgeInsets.all(20),
@@ -100,7 +100,7 @@ class _UserScreenState extends State<UserScreen> {
                       separatorBuilder: (BuildContext context, int index) => const Divider(),
                     );
                   } else if (snapshot.hasError) {
-                    return Text("Error: ${snapshot.error}");
+                    return Text("Ошибка: ${snapshot.error}");
                   }
                   return const CircularProgressIndicator();
                 }
@@ -117,7 +117,7 @@ class _UserScreenState extends State<UserScreen> {
               children: [
                 const SizedBox(height: 100,),
                 Text(
-                  Strings.authFailed,
+                  Strings.authFail,
                   style: Theme.of(context).textTheme.headline6,
                   textAlign: TextAlign.center,
                 ),
